@@ -27,7 +27,12 @@ document.addEventListener("DOMContentLoaded", () => { // Ensures the DOM is full
     });
 
     function renderTask(task) { //this function take local storage arr tasks and render on the ui
-        console.log(task);
+        const li = document.createElement('li');
+        li.setAttribute('data-id', 'task.id'); // Setting a data attribute for the task ID
+        li.innerHTML = ` 
+        <span>${task.text}</span>
+        <button>Delete</button> `; // const content = element.innerHTML;
+        todoList.appendChild(li); // Appending the new task to the todo list
     }
 
     function saveTask() {
